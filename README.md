@@ -15,6 +15,7 @@ Let people know what your project can do specifically. Provide context and add a
 - Never use this app xD 
 - The sole purpose is learning
 ## App versions:
+- Postgress 16.2 https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
 
 
 ## Contributing

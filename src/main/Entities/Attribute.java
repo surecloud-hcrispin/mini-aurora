@@ -1,4 +1,4 @@
-package main.Modules;
+package main.Entities;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,19 +6,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class TextResponse {
-    private String name;
+public class Attribute {
+    protected String name;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    protected Long id;
 
-    public TextResponse(String name){
+    public Attribute(String name){
         this.name = name;
     }
 
     //Default constructor
-    public TextResponse(){}
+    public Attribute(){}
 
     public String getName(){
         return name;

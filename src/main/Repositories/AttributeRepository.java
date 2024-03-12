@@ -1,6 +1,6 @@
 package main.Repositories;
 
-import main.Modules.TextResponse;
+import main.Entities.Attribute;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface TextRepository extends JpaRepository<TextResponse, Long> {
+public interface AttributeRepository extends JpaRepository<Attribute, Long> {
     @Query(value = "SELECT * FROM text_response", nativeQuery = true)
-    List<TextResponse> getAllTextResponses();
+    List<Attribute> getAllTextResponses();
 }

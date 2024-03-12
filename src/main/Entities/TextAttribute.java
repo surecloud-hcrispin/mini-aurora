@@ -21,7 +21,7 @@ public class TextAttribute extends Attribute {
         return large;
     }
 
-    public void setPlaceholder(placeholder) {
+    public void setPlaceholder(String placeholder) {
         //TODO Validation
         this.placeholder = placeholder;
     }

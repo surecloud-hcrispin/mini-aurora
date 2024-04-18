@@ -1,4 +1,4 @@
-package main.Entities;
+package Main.Modules;
 
 import javax.persistence.Entity;
 
@@ -11,6 +11,10 @@ public class TextAttribute extends Attribute {
         this.name = name;
         this.large = large;
         this.placeholder = placeholder;
+    }
+
+    public TextAttribute() {
+
     }
 
     public String getPlaceholder() {

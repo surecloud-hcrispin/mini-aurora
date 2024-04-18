@@ -1,7 +1,8 @@
-package main.Services;
+package Main.Services;
 
-import main.Entities.Attribute;
-import main.Repositories.AttributeRepository;
+import Main.Modules.Attribute;
+import Main.Modules.TextAttribute;
+import Main.Repositories.AttributeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,11 +18,11 @@ public class ResponseService {
         this.attributeRepository = attributeRepository;
     }
 
-    public List<Attribute> getAllTextResponses(){
+    public List<TextAttribute> getAllTextResponses(){
         return attributeRepository.getAllTextResponses();
     }
 
-    public Attribute createTextResponses(Attribute attribute) {
+    public Attribute createTextResponses(TextAttribute attribute) {
         return attributeRepository.save(attribute);
     }
 

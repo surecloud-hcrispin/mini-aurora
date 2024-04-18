@@ -1,7 +1,8 @@
-package main.Controllers;
+package Main.Controllers;
 
-import main.Entities.Attribute;
-import main.Services.ResponseService;
+import Main.Modules.Attribute;
+import Main.Modules.TextAttribute;
+import Main.Services.ResponseService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,12 +16,12 @@ public class ResponseController {
         this.responseService = responseService;
     }
 
-    @GetMapping
-    public List<Attribute> getAllTextResponses(){
+    @GetMapping("/getAll")
+    public List<TextAttribute> getAllTextResponses(){
         return  this.responseService.getAllTextResponses();
     }
-    @PostMapping("/add")
-    public void addTextResponse(@RequestBody Attribute attribute){
+    @PostMapping("/addText")
+    public void addTextResponse(@RequestBody TextAttribute attribute){
         this.responseService.createTextResponses(attribute);
     }
 

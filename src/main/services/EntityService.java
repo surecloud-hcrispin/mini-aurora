@@ -1,7 +1,7 @@
-package Main.Services;
+package main.services;
 
-import Main.Modules.ApplicationEntity;
-import Main.Repositories.EntityRepository;
+import main.modules.ApplicationEntity;
+import main.repositories.EntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

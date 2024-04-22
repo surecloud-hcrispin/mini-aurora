@@ -1,6 +1,6 @@
-package Main.Modules;
+package main.modules;
 
-import Main.Modules.Enums.Layouts;
+import main.modules.enums.Layouts;
 
 import javax.persistence.*;
 import javax.persistence.Entity;

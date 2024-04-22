@@ -1,6 +1,6 @@
-package Main.Repositories;
+package main.repositories;
 
-import Main.Modules.View;
+import main.modules.View;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

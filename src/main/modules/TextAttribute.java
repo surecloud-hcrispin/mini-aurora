@@ -1,4 +1,6 @@
-package Main.Modules;
+package main.modules;
+
+import main.modules.enums.AttributeTypes;
 
 import javax.persistence.Entity;
 
@@ -8,13 +10,14 @@ public class TextAttribute extends Attribute {
     private String placeholder;
 
     public TextAttribute(String name, boolean large, String placeholder){
+        type = AttributeTypes.TEXT;
         this.name = name;
         this.large = large;
         this.placeholder = placeholder;
     }
 
     public TextAttribute() {
-
+        type = AttributeTypes.TEXT;
     }
 
     public String getPlaceholder() {

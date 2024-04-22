@@ -1,7 +1,7 @@
-package Main.Services;
+package main.services;
 
-import Main.Modules.View;
-import Main.Repositories.ViewRepository;
+import main.modules.View;
+import main.repositories.ViewRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

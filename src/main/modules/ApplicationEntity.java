@@ -1,4 +1,4 @@
-package Main.Modules;
+package main.modules;
 
 
 import javax.persistence.*;

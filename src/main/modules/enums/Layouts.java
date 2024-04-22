@@ -1,4 +1,4 @@
-package Main.Modules.Enums;
+package main.modules.enums;
 
 public enum Layouts {
     ONE_COLUMN,

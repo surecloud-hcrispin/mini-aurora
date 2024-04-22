@@ -1,4 +1,6 @@
-package Main.Modules;
+package main.modules;
+
+import main.modules.enums.AttributeTypes;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,10 +14,13 @@ public class Attribute {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
+    protected Enum<AttributeTypes> type;
 
     public Attribute(String name){
         this.name = name;
     }
+
+
 
     //Default constructor
     public Attribute(){}

@@ -25,4 +25,7 @@ public class EntityService {
         return entityRepository.save(applicationEntity);
     }
 
+    public List<ApplicationEntity> getEntities() {
+        return entityRepository.getAllEntities();
+    }
 }

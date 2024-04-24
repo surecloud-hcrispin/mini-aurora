@@ -1,13 +1,14 @@
 package main.controllers;
 
 import main.modules.ApplicationEntity;
+import main.modules.Attribute;
 import main.services.EntityService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("api/entity")
 public class EntityController {
     private final EntityService entityService;
@@ -16,8 +17,15 @@ public class EntityController {
         this.entityService = entityService;
     }
 
+    @GetMapping("")
+    public List<ApplicationEntity> getAllEntities(){
+        return  this.entityService.getEntities();
+    }
+
     @PostMapping("/add")
     public void addEntity(@RequestBody ApplicationEntity entity){
         this.entityService.createEntity(entity);
     }
+
+
 }

@@ -1,7 +1,7 @@
 package main.controllers;
 
 import main.modules.ApplicationEntity;
-import main.modules.Attribute;
+import main.modules.dtos.ApplicationEntityDTO;
 import main.services.EntityService;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,16 +23,19 @@ public class EntityController {
     }
 
     @PostMapping("/add")
-    public void addEntity(@RequestBody ApplicationEntity entity){
-        this.entityService.createEntity(entity);
+    public ApplicationEntity addEntity(@RequestBody ApplicationEntityDTO entity){
+        ApplicationEntity applicationEntity = new ApplicationEntity(entity);
+        return this.entityService.createEntity(applicationEntity);
     }
 
+    @SuppressWarnings("CallToPrintStackTrace")
     @GetMapping("/{id}")
     public ApplicationEntity getEntity(@PathVariable String id){
         try {
-            long bigIntValue = Long.valueOf(id);
+            long bigIntValue = Long.parseLong(id);
             return this.entityService.getEntity(bigIntValue).get(0);
         } catch (NumberFormatException e) {
+            //TODO Add proper Logging
             e.printStackTrace();
             return null;
         }

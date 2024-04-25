@@ -1,5 +1,6 @@
 package main.modules;
 
+import main.modules.dtos.TextAttributeDTO;
 import main.modules.enums.AttributeTypes;
 
 import javax.persistence.Entity;
@@ -9,23 +10,19 @@ public class TextAttribute extends Attribute {
     private boolean large;
     private String placeholder;
 
-    public TextAttribute(String name, boolean large, String placeholder){
-        type = AttributeTypes.TEXT;
-        this.name = name;
-        this.large = large;
-        this.placeholder = placeholder;
-    }
-
     public TextAttribute() {
         type = AttributeTypes.TEXT;
     }
 
-    public String getPlaceholder() {
-        return placeholder;
+    public TextAttribute(TextAttributeDTO attribute) {
+        this.type = attribute.attributeType;
+        this.name = attribute.getName();
+        this.large = attribute.large;
+        this.placeholder = attribute.placeholder;
     }
 
-    public boolean getlarge() {
-        return large;
+    public String getPlaceholder() {
+        return placeholder;
     }
 
     public void setPlaceholder(String placeholder) {
@@ -33,7 +30,11 @@ public class TextAttribute extends Attribute {
         this.placeholder = placeholder;
     }
 
-    public void setlarge( boolean large) {
+    public boolean getLarge() {
+        return large;
+    }
+
+    public void setLarge( boolean large) {
         //TODO Validation
         this.large = large;
     }

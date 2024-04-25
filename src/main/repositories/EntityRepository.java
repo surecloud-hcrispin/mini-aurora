@@ -1,7 +1,6 @@
 package main.repositories;
 
 import main.modules.ApplicationEntity;
-import main.modules.Attribute;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

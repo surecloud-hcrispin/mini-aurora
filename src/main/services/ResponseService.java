@@ -27,7 +27,7 @@ public class ResponseService {
         return attributeRepository.getResponse(id);
     }
 
-    public Attribute createTextResponses(TextAttribute attribute) {
+    public TextAttribute createTextResponses(TextAttribute attribute) {
         return attributeRepository.save(attribute);
     }
 

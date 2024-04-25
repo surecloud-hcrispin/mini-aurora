@@ -15,11 +15,11 @@ Let people know what your project can do specifically. Provide context and add a
 - Never use this app xD 
 - The sole purpose is learning
 ## App versions:
-- Postgress 16.2 https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+- Postgres 16.2 https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
 
 
 ## Contributing
 - Please feel free to provide comments and peer review
 - Please do not push or pull to this as I need to prove I have what it takes
 ## Acknowledgment
-Thank yous for help and feedback 
+Thank you for help and feedback 

@@ -20,8 +20,6 @@ public class Attribute {
         this.name = name;
     }
 
-
-
     //Default constructor
     public Attribute(){
     }

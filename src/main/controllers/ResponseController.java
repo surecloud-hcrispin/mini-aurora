@@ -22,13 +22,25 @@ public class ResponseController {
     public List<Attribute> getAllResponses(){
         return  this.responseService.getAllResponses();
     }
+
     @PostMapping("/addText")
     public void addTextResponse(@RequestBody TextAttribute attribute){
         this.responseService.createTextResponses(attribute);
     }
+
     @PostMapping("/addNumber")
     public void addNumberResponse(@RequestBody NumberAttribute attribute){
         this.responseService.createNumberResponses(attribute);
     }
 
+    @GetMapping("/{id}")
+    public Attribute getResponse(@PathVariable String id){
+        try {
+            long bigIntValue = Long.valueOf(id);
+            return this.responseService.getResponse(bigIntValue).get(0);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

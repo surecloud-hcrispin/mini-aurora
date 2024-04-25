@@ -13,7 +13,7 @@ public class Attribute {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Long id;
+    public Long id;
     protected Enum<AttributeTypes> type;
 
     public Attribute(String name){
@@ -23,7 +23,8 @@ public class Attribute {
 
 
     //Default constructor
-    public Attribute(){}
+    public Attribute(){
+    }
 
     public String getName(){
         return name;

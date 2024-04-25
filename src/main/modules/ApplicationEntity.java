@@ -8,7 +8,7 @@ import java.util.List;
 public class ApplicationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Long id;
+    public Long id;
     private String name;
     private String description;
 

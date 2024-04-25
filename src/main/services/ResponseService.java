@@ -23,6 +23,10 @@ public class ResponseService {
         return attributeRepository.getAllResponses();
     }
 
+    public List<Attribute> getResponse(Long id){
+        return attributeRepository.getResponse(id);
+    }
+
     public Attribute createTextResponses(TextAttribute attribute) {
         return attributeRepository.save(attribute);
     }

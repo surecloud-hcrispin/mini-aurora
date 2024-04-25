@@ -27,5 +27,14 @@ public class EntityController {
         this.entityService.createEntity(entity);
     }
 
-
+    @GetMapping("/{id}")
+    public ApplicationEntity getEntity(@PathVariable String id){
+        try {
+            long bigIntValue = Long.valueOf(id);
+            return this.entityService.getEntity(bigIntValue).get(0);
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

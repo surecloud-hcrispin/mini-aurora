@@ -1,6 +1,7 @@
 package main.services;
 
 import main.modules.ApplicationEntity;
+import main.modules.Attribute;
 import main.repositories.EntityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,5 +28,9 @@ public class EntityService {
 
     public List<ApplicationEntity> getEntities() {
         return entityRepository.getAllEntities();
+    }
+
+    public List<ApplicationEntity> getEntity(Long id){
+        return entityRepository.getEntity(id);
     }
 }

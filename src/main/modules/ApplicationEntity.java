@@ -2,7 +2,6 @@ package main.modules;
 
 
 import main.modules.dtos.ApplicationEntityDTO;
-import main.modules.enums.AttributeTypes;
 
 import javax.persistence.*;
 import java.util.List;
@@ -14,17 +13,15 @@ public class ApplicationEntity {
     public Long id;
     private String name;
     private String description;
-    private Enum<AttributeTypes> attributeType;
 
     @OneToMany(mappedBy = "id")
     private List<View> views;
 
-    public ApplicationEntity(Long id, String name, String description, Enum<AttributeTypes> attributeType ,List<View> views) {
+    public ApplicationEntity(Long id, String name, String description, List<View> views) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.views = views;
-        this.attributeType = attributeType;
     }
     public ApplicationEntity(ApplicationEntityDTO entity) {
         name = entity.name;
@@ -59,14 +56,6 @@ public class ApplicationEntity {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Enum<AttributeTypes> getAttributeTypes() {
-        return attributeType;
-    }
-
-    public void setAttributeTypes(Enum<AttributeTypes> attributeType) {
-        this.attributeType = attributeType;
     }
 
     // Getter and Setter methods for 'views'

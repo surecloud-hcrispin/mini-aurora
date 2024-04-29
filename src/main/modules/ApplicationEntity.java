@@ -1,16 +1,15 @@
 package main.modules;
 
-
-import main.modules.dtos.ApplicationEntityDTO;
-
-import javax.persistence.*;
 import java.util.List;
+
+import jakarta.persistence.*;
+import main.modules.dtos.ApplicationEntityDTO;
 
 @Entity
 public class ApplicationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long id;
+    protected Long id;
     private String name;
     private String description;
 
@@ -23,6 +22,7 @@ public class ApplicationEntity {
         this.description = description;
         this.views = views;
     }
+
     public ApplicationEntity(ApplicationEntityDTO entity) {
         name = entity.name;
         description = entity.description;
@@ -30,6 +30,7 @@ public class ApplicationEntity {
     }
 
     public ApplicationEntity() {
+
     }
 
     public Long getId() {
@@ -40,7 +41,6 @@ public class ApplicationEntity {
         this.id = id;
     }
 
-    // Getter and Setter methods for 'name'
     public String getName() {
         return name;
     }
@@ -49,7 +49,6 @@ public class ApplicationEntity {
         this.name = name;
     }
 
-    // Getter and Setter methods for 'description'
     public String getDescription() {
         return description;
     }
@@ -58,7 +57,6 @@ public class ApplicationEntity {
         this.description = description;
     }
 
-    // Getter and Setter methods for 'views'
     public List<View> getViews() {
         return views;
     }

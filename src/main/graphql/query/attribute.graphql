@@ -1,0 +1,21 @@
+interface Attribute {
+    id: ID
+    name: String
+    type: String
+}
+
+interface TextAttribute implements Attribute {
+    id: ID
+    name: String
+    type: String
+    large: Boolean
+    placeholder: String
+}
+
+interface NumberAttribute implements Attribute {
+    id: ID
+    name: String
+    type: String
+    guidance: String
+    placeholder: String
+}

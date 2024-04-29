@@ -1,0 +1,8 @@
+interface Section {
+    id: ID
+    name: String
+    layout: String
+    showName: Boolean
+    columns: [Column]
+}
+

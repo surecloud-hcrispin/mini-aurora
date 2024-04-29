@@ -1,7 +1,6 @@
 package main.modules;
 
-import javax.persistence.*;
-import javax.persistence.Entity;
+import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
@@ -10,11 +9,11 @@ public class View {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
     private String name;
+    private String description;
 
     @OneToMany(mappedBy = "id")
     private List<Section> sections;
 
-    private String description;
 
     public View(String name, List<Section> sections, String description){
         this.name = name;

@@ -1,23 +1,5 @@
-type Entity {
-    id: ID!
-    name: String
-    description: String
-    view: [View]
-}
-type View {
-    id: ID!
-    name: String
-    description: String
-    section: [Section]
-}
-type Section {
-    id: ID!
-    name: String
-    layout: String
-    showName: Boolean
-}
-type Attribute {
-    id: ID!
-    type: String
-    name: String
+type Query {
+    attributes: [Attribute!]!
+    entities: [Entity!]!
+    views: [View!]!
 }

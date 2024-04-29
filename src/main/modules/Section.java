@@ -2,8 +2,7 @@ package main.modules;
 
 import main.modules.enums.Layouts;
 
-import javax.persistence.*;
-import javax.persistence.Entity;
+import jakarta.persistence.*;
 import java.util.List;
 
 @Entity

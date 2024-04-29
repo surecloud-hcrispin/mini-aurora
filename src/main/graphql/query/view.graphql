@@ -1,0 +1,7 @@
+interface View {
+    id: ID
+    name: String
+    description: String
+    section: [Section]
+
+}

@@ -1,5 +1,5 @@
-export async function fetchData(message) {
-    let url = "http://localhost:8080/api/response"
+export async function fetchData(message, selectedOption) {
+    let url = "http://localhost:8080/api/"+ selectedOption
     if(message !== ""){
         url += "/"+ message;
     }

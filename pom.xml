@@ -17,6 +17,8 @@
 
     <properties>
         <spring.version>6.0.11</spring.version>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -26,6 +28,14 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
             <version>3.2.1</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>2.5-jenkins-1</version>
+        </dependency>
+
 
         <!-- Corrected Spring Boot Starter Web dependency -->
         <dependency>

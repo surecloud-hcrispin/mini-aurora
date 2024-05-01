@@ -7,13 +7,16 @@ function App() {
     const [message, setMessage] = useState("");
     const [apiResponse, setApiResponse] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
+    const [selectedOption, setSelectedOption] = useState("response");
+
+    const options = ["response", "entity", "view"];
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsLoading(true);
 
         try {
-            const data = await fetchData(message);
+            const data = await fetchData(message, selectedOption);
             setApiResponse(data);
         } catch (error) {
             console.error("Error fetching data:", error.message);
@@ -32,11 +35,26 @@ function App() {
                 </p>
 
                 <form onSubmit={handleSubmit}>
+                <div  className="form-group">
+
+                
                     <textarea
-                        placeholder="Message"
+                        placeholder="ID (Blank for all)"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                     />
+                </div>
+                    <select
+                        value={selectedOption}
+                        onChange={(e) => setSelectedOption(e.target.value)}
+                    >
+                        {options.map((option, index) => (
+                            <option key={index} value={option}>
+                                {option}
+                            </option>
+                        ))}
+                    </select>
+
                     <button type="submit" disabled={isLoading}>
                         {isLoading ? "Loading..." : "Lookup"}
                     </button>

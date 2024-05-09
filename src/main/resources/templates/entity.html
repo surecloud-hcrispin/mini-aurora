@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Entities</title>
+</head>
+<body>
+<input type="text" id="inputValue" placeholder="Enter a value">
+
+<button onclick="getId()">Get ID</button>
+<button onclick="getAll()">All Data</button>
+
+<div id="dataContainer"></div>
+
+
+<script th:inline="javascript">
+
+    function getAll() {
+        fetch('http://localhost:8080/api/entity')
+            .then(response => response.json())
+            .then(data => {
+                // Process the received data and display it in the HTML
+                const dataContainer = document.getElementById('dataContainer');
+                dataContainer.innerHTML = "<h2>Entities</h2>";
+                data.forEach(entity => {
+                    dataContainer.innerHTML += `<p>ID: ${entity.id}, Name: ${entity.name}</p>`;
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }
+
+    function getId() {
+        const inputValue = document.getElementById('inputValue').value;
+        fetch('http://localhost:8080/api/entity/' + inputValue)
+            .then(response => response.json())
+            .then(data => {
+                const dataContainer = document.getElementById('dataContainer');
+                dataContainer.innerHTML = "<h2>Entities</h2>";
+                console.log(JSON.stringify(data))
+                    dataContainer.innerHTML += `<p>ID: ${data.id}, Name: ${data.name}</p>`;
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }
+
+
+</script>
+</body>
+</html>

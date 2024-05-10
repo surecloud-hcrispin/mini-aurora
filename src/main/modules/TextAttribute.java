@@ -1,13 +1,19 @@
 package main.modules;
 
+import lombok.Getter;
+import lombok.Setter;
 import main.modules.dtos.TextAttributeDTO;
 import main.modules.enums.AttributeTypes;
 
 import jakarta.persistence.Entity;
 
+@Setter
+@Getter
 @Entity
 public class TextAttribute extends Attribute {
+
     private boolean large;
+
     private String placeholder;
 
     public TextAttribute(String name, boolean large, String placeholder){
@@ -26,23 +32,5 @@ public class TextAttribute extends Attribute {
 
     public TextAttribute() {
         type = AttributeTypes.TEXT;
-    }
-
-    public String getPlaceholder() {
-        return placeholder;
-    }
-
-    public boolean getlarge() {
-        return large;
-    }
-
-    public void setPlaceholder(String placeholder) {
-        //TODO Validation
-        this.placeholder = placeholder;
-    }
-
-    public void setlarge( boolean large) {
-        //TODO Validation
-        this.large = large;
     }
 }

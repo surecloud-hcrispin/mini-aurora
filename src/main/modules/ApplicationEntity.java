@@ -3,16 +3,22 @@ package main.modules;
 import java.util.List;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import main.modules.dtos.ApplicationEntityDTO;
 
+@Getter
 @Entity
 public class ApplicationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected Long id;
+    @Setter
     private String name;
+    @Setter
     private String description;
 
+    @Setter
     @OneToMany(mappedBy = "id")
     private List<View> views;
 
@@ -31,38 +37,6 @@ public class ApplicationEntity {
 
     public ApplicationEntity() {
 
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public List<View> getViews() {
-        return views;
-    }
-
-    public void setViews(List<View> views) {
-        this.views = views;
     }
 
 }

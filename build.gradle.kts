@@ -5,6 +5,7 @@
 plugins {
     `java-library`
     `maven-publish`
+    id("io.freefair.lombok") version "8.6"
 }
 
 sourceSets {
@@ -19,6 +20,7 @@ sourceSets {
 
 repositories {
     mavenLocal()
+    mavenCentral()
     maven {
         url = uri("https://jcenter.bintray.com/")
     }

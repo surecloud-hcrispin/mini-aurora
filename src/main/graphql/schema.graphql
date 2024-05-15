@@ -1,5 +1,0 @@
-type Query {
-    attributes: [Attribute!]!
-    entities: [Entity!]!
-    views: [View!]!
-}

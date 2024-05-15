@@ -1,6 +1,7 @@
-interface Entity {
+type View {
     id: ID
     name: String
     description: String
-    views: View
+    section: [Section]
+
 }

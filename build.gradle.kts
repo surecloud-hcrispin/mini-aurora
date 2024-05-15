@@ -44,6 +44,11 @@ dependencies {
     api(libs.com.fasterxml.jackson.core.jackson.core)
     api(libs.com.fasterxml.jackson.core.jackson.databind)
     api(libs.com.fasterxml.jackson.core.jackson.annotations)
+
+    implementation("org.springframework.boot:spring-boot-starter-graphql")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
 }
 
 group = "MiniAurora"

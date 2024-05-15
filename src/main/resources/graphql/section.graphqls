@@ -1,4 +1,4 @@
-interface Section {
+type Section {
     id: ID
     name: String
     layout: String

@@ -1,0 +1,17 @@
+type Query {
+    attributes: [Attribute!]!
+    entities: [Entity!]!
+}
+
+type Entity {
+    id: ID
+    name: String
+    description: String
+    views: [View!]
+}
+
+type Attribute {
+    id: ID
+    name: String
+    type: String
+}

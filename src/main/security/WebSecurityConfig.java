@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -17,9 +18,9 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         final String[] AUTH_WHITELIST = {
-                "/", "/api/entity", "/api/entity/*","/home", "/login",  "/webentity", "/graphiql", "/graphql", "/graphql/*", "/*"
+                "/", "/api/entity", "/api/entity/*","/home", "/login",  "/webentity", "/graphiql", "/graphql", "/graphql/*","/error"
         };
-        http
+        http.csrf(AbstractHttpConfigurer::disable)
             .authorizeHttpRequests(requests -> requests
                     .requestMatchers("/hello").hasRole("USER")
                     .requestMatchers(AUTH_WHITELIST).permitAll().anyRequest().authenticated()

@@ -1,12 +1,17 @@
 type Query {
     attributes: [Attribute!]!
     entities: [Entity!]!
-    views: [View!]!
 }
 
 type Entity {
     id: ID
     name: String
     description: String
-    views: [View]
+    views: [View!]
+}
+
+type Attribute {
+    id: ID
+    name: String
+    type: String
 }

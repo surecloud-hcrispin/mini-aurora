@@ -1,4 +1,4 @@
-interface View {
+type View {
     id: ID
     name: String
     description: String

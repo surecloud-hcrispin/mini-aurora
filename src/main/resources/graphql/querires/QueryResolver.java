@@ -1,4 +1,4 @@
-package main.graphql;
+package graphql.graphql;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import main.modules.ApplicationEntity;

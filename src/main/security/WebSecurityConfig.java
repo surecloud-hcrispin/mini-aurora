@@ -17,7 +17,7 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         final String[] AUTH_WHITELIST = {
-                "/", "/api/entity", "/api/entity/*","/home", "/login",  "/webentity"
+                "/", "/api/entity", "/api/entity/*","/home", "/login",  "/webentity", "/graphiql", "/graphql", "/graphql/*", "/*"
         };
         http
             .authorizeHttpRequests(requests -> requests

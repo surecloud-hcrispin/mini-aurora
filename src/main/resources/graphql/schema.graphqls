@@ -3,3 +3,10 @@ type Query {
     entities: [Entity!]!
     views: [View!]!
 }
+
+type Entity {
+    id: ID
+    name: String
+    description: String
+    views: View
+}

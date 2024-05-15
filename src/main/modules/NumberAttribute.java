@@ -31,3 +31,4 @@ public class NumberAttribute extends Attribute {
         this.name = attributeDTO.getName();
     }
 }
+

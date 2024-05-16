@@ -1,7 +1,10 @@
 package main.controllers;
 
 import main.modules.ApplicationEntity;
+import main.modules.dtos.ApplicationEntityDTO;
 import main.repositories.EntityRepository;
+import org.springframework.graphql.data.method.annotation.Argument;
+import org.springframework.graphql.data.method.annotation.MutationMapping;
 import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
@@ -20,5 +23,11 @@ public class EntityGraphqlController {
     public List<ApplicationEntity> entities(){
 
         return entityRepository.getAllEntities();
+    }
+
+    @MutationMapping
+    public ApplicationEntity createEntity(@Argument String name, @Argument String description){
+        ApplicationEntityDTO appEntity = new ApplicationEntityDTO(name, description);
+        return entityRepository.save(new ApplicationEntity(appEntity));
     }
 }

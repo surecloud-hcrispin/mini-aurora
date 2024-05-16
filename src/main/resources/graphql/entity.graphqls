@@ -1,0 +1,6 @@
+type Entity {
+    id: ID
+    name: String
+    description: String
+    views: [View!]
+}

@@ -30,4 +30,16 @@ public class EntityGraphqlController {
         ApplicationEntityDTO appEntity = new ApplicationEntityDTO(name, description);
         return entityRepository.save(new ApplicationEntity(appEntity));
     }
+
+    @MutationMapping
+    public ApplicationEntity updateEntity(@Argument Long id, @Argument String name, @Argument String description){
+        ApplicationEntity updated = entityRepository.getEntity(id).get(0);
+        if(name != null && !name.equals(updated.getName())){
+            updated.setName(name);
+        }
+        if(description != null && !description.equals(updated.getDescription())){
+            updated.setDescription(description);
+        }
+        return entityRepository.save(updated);
+    }
 }

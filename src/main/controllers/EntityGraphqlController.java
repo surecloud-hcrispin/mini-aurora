@@ -42,4 +42,10 @@ public class EntityGraphqlController {
         }
         return entityRepository.save(updated);
     }
+
+    @MutationMapping
+    public Long deleteEntity(@Argument Long id){
+        entityRepository.delete(entityRepository.getEntity(id).get(0));
+        return id;
+    }
 }

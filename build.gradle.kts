@@ -25,13 +25,6 @@ sourceSets {
 repositories {
     mavenLocal()
     mavenCentral()
-    maven {
-        url = uri("https://jcenter.bintray.com/")
-    }
-
-    maven {
-        url = uri("https://repo.maven.apache.org/maven2/")
-    }
 }
 
 dependencies {
@@ -57,15 +50,22 @@ dependencies {
     implementation("org.jooq:jooq:3.19.1")
     jooqGenerator("org.postgresql:postgresql:42.5.4")
 
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.10.2")
+    testImplementation("org.springframework.boot:spring-boot-starter-test:3.2.5")
+    testImplementation("org.testcontainers:testcontainers:1.19.7")
+    testImplementation("org.testcontainers:junit-jupiter:1.19.7")
+    testImplementation("org.testcontainers:postgresql:1.19.7")
+    testImplementation("org.springframework.boot:spring-boot-testcontainers:3.2.5")
+
 }
 
 group = "MiniAurora"
 version = "1.0"
 description = "mini-aurora"
-java.sourceCompatibility = JavaVersion.VERSION_1_8
 
-tasks.withType<JavaCompile> {
-    options.compilerArgs.add("-parameters")
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 publishing {
@@ -135,4 +135,8 @@ tasks.test {
     testLogging {
         events("passed", "skipped", "failed")
     }
+}
+
+tasks.withType<JavaCompile> {
+    options.compilerArgs.add("-parameters")
 }

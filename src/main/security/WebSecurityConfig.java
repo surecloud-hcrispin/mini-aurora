@@ -18,7 +18,7 @@ public class WebSecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         final String[] AUTH_WHITELIST = {
-                "/", "/api/entity", "/api/entity/*","/home", "/login",  "/webentity", "/graphiql", "/graphql", "/graphql/*","/error"
+                "/", "/api/entity", "/api/entity/*","/home", "/login",  "/webentity", "/graphiql", "/graphql", "/graphql/*","/error", "/api/attributeJooq", "/api/attributeJooq/*", "/api/attributeJooq/name/*"
         };
         http.csrf(AbstractHttpConfigurer::disable)
             .authorizeHttpRequests(requests -> requests
@@ -42,7 +42,6 @@ public class WebSecurityConfig {
                         .password("password")
                         .roles("USER")
                         .build();
-
         return new InMemoryUserDetailsManager(user);
     }
 }

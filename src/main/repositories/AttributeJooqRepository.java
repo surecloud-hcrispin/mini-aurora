@@ -4,7 +4,6 @@ import main.exceptions.ResourceNotFoundException;
 import main.modules.Attribute;
 import org.jooq.DSLContext;
 import org.jooq.Record;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,7 +13,6 @@ import static org.jooq.impl.DSL.table;
 
 @Repository
 public class AttributeJooqRepository {
-    @Autowired
     private final DSLContext dsl;
 
     public AttributeJooqRepository(DSLContext dsl) {
@@ -22,13 +20,13 @@ public class AttributeJooqRepository {
     }
 
     public String findNameById(Long id) {
-        Record record = dsl.select()
+        Record attribute = dsl.select()
                 .from(table("attribute"))
                 .where(field("id").eq(id))
                 .fetchOptional()
                 .orElseThrow(() -> new ResourceNotFoundException("Resource not found with id " + id));
         //404 error return instead
-        Object name = record.get("name");
+        Object name = attribute.get("name");
         return (String) name;
     }
     public Attribute findById(Long id) {

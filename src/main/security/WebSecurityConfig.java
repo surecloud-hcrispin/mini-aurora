@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -17,15 +18,15 @@ public class WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        final String[] AUTH_WHITELIST = {
+        final String[] authWhitelist = {
                 "/", "/api/entity", "/api/entity/*","/home", "/login",  "/webentity", "/graphiql", "/graphql", "/graphql/*","/error", "/api/attributeJooq", "/api/attributeJooq/*", "/api/attributeJooq/name/*"
         };
         http.csrf(AbstractHttpConfigurer::disable)
             .authorizeHttpRequests(requests -> requests
                     .requestMatchers("/hello").hasRole("USER")
-                    .requestMatchers(AUTH_WHITELIST).permitAll().anyRequest().authenticated()
+                    .requestMatchers(authWhitelist).permitAll().anyRequest().authenticated()
             )
-            .logout(logout -> logout.permitAll());
+            .logout(LogoutConfigurer::permitAll);
         http
                 .formLogin(form -> form
                         .loginPage("/login")

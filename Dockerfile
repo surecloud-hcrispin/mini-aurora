@@ -1,4 +1,4 @@
-FROM postgres:latest
+FROM postgres:2.24.5
 
 # Set environment variables
 ENV POSTGRES_DB=Mini-Aurora

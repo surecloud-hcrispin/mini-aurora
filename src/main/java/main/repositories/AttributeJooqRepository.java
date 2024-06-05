@@ -25,7 +25,6 @@ public class AttributeJooqRepository {
                 .where(field("id").eq(id))
                 .fetchOptional()
                 .orElseThrow(() -> new ResourceNotFoundException("Resource not found with id " + id));
-        //404 error return instead
         Object name = attribute.get("name");
         return (String) name;
     }
@@ -37,7 +36,6 @@ public class AttributeJooqRepository {
         if (records.isEmpty()) {
             throw new ResourceNotFoundException("Resource not found with id " + id);
         }
-        //404 error return instead
-        return records.get(0);
+        return records.getFirst();
     }
 }

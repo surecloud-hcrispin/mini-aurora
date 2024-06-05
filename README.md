@@ -12,7 +12,7 @@ Let people know what your project can do specifically. Provide context and add a
 
 
 ## Usage
-- Never use this app xD 
+- Never use this app xD
 - The sole purpose is learning
 ## App versions:
 - Postgres 16.2 https://www.enterprisedb.com/downloads/postgres-postgresql-downloads

@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
+import main.modules.dtos.AttributeDTO;
 import main.modules.enums.AttributeTypes;
 
 
@@ -24,6 +25,10 @@ public class Attribute {
 
     public Attribute(String name){
         this.name = name;
+    }
+
+    public Attribute(AttributeDTO attributeDTO){
+        this.name = attributeDTO.getName();
     }
 
     //Default constructor

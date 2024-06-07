@@ -2,4 +2,8 @@ type Mutation {
     createEntity( name: String, description: String): Entity
     updateEntity(id: ID!,name: String, description: String ):Entity
     deleteEntity(id: ID!): ID
+
+    createAttribute( name: String): Attribute
+    updateAttribute(id: ID!,name: String): Attribute
+    deleteAttribute(id: ID!): ID
 }

@@ -2,8 +2,6 @@ package main.RepositoryTests;
 
 import main.modules.Attribute;
 import main.repositories.AttributeRepository;
-import main.repositories.EntityRepository;
-import main.modules.ApplicationEntity;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +16,7 @@ import java.util.List;
 @SpringBootTest
 @Transactional
 @Rollback
-public class AttributeRepositoryTest {
+class AttributeRepositoryTest {
 
     @BeforeEach
     void setUp() {
@@ -38,7 +36,7 @@ public class AttributeRepositoryTest {
     private AttributeRepository attributeRepository;
 
     @Test
-    public void testGetAllEntities() {
+    void testGetAllEntities() {
         List<Attribute> responseList = attributeRepository.getAllResponses();
         assertThat(responseList).hasSize(2);
         assertThat(responseList.get(0).getName()).isEqualTo("Entity 1");
@@ -46,7 +44,7 @@ public class AttributeRepositoryTest {
     }
 
     @Test
-    public void testGetEntityById() {
+    void testGetEntityById() {
         List<Attribute> response = attributeRepository.getResponse(1L);
         assertThat(response).hasSize(1);
         assertThat(response.getFirst().getName()).isEqualTo("Entity 1");

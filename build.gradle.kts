@@ -59,6 +59,7 @@ dependencies {
 	testImplementation("org.testcontainers:junit-jupiter")
 	testImplementation("org.testcontainers:postgresql")
 	testImplementation("org.junit.jupiter:junit-jupiter-api")
+	testImplementation("org.mockito:mockito-core")
 
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }

@@ -56,15 +56,23 @@ dependencies {
 	testImplementation("org.springframework:spring-webflux")
 	testImplementation("org.springframework.graphql:spring-graphql-test")
 	testImplementation("org.springframework.security:spring-security-test")
+	testImplementation("org.springframework:spring-test")
+
 	testImplementation("org.testcontainers:junit-jupiter")
 	testImplementation("org.testcontainers:postgresql")
 	testImplementation("org.junit.jupiter:junit-jupiter-api")
+
+	testImplementation("org.mockito:mockito-core")
+	testImplementation ("org.mockito:mockito-junit-jupiter")
+
+
+
 
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 jooq {
-	version.set("3.19.1")  // default (can be omitted)
+	version.set("3.19.8")  // default (can be omitted)
 	edition.set(nu.studer.gradle.jooq.JooqEdition.OSS)  // default (can be omitted)
 
 	configurations {
